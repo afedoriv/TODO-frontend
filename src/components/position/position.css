@@ -1,0 +1,13 @@
+.position {
+	gap: 6px;
+	display: flex;
+	flex-direction: column;
+}
+.location,
+.temperature {
+	color: var(--color-white-100);
+	font-family: var(--font-family);
+	font-size: var(--font-size-lg);
+	font-weight: var(--font-weight-light);
+	white-space: nowrap;
+}

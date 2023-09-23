@@ -1,0 +1,102 @@
+.form input[type='checkbox'],
+.task input[type='checkbox'] {
+	appearance: none;
+	-webkit-appearance: none;
+}
+.form-checkmark,
+.task-checkmark {
+	cursor: pointer;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.message .form-checkmark {
+	cursor: default;
+	width: 35px;
+}
+.form .form-checkmark {
+	margin-left: 8px;
+	width: 35px;
+}
+.task-checkmark {
+	margin-left: 6px;
+	min-width: 40px;
+}
+.form-checkmark i,
+.task-checkmark i {
+	font-size: var(--font-size-md);
+	padding: 5%;
+}
+.form-checkmark.unchecked i,
+.task-checkmark i {
+	background: var(--gradient-blue-1);
+	background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent;
+	-webkit-text-fill-color: transparent;
+}
+.form-checkmark.checked i,
+.task label:hover .task-checkmark i {
+	background: var(--gradient-blue-2);
+	background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent;
+	-webkit-text-fill-color: transparent;
+}
+.task label:active .task-checkmark i {
+	opacity: 0.8;
+	transform: scale(0.95);
+}
+.form .form-checkmark:hover i {
+	background: var(--gradient-orange-1);
+	background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent;
+	-webkit-text-fill-color: transparent;
+}
+.form-checkmark.checked:active i {
+	background: var(--gradient-blue-1);
+	background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent;
+	-webkit-text-fill-color: transparent;
+}
+.form .form-checkmark.unchecked:active i {
+	background: var(--gradient-blue-2);
+	background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent;
+	-webkit-text-fill-color: transparent;
+}
+
+@media all and (max-width: 660px) {
+	.message .form-checkmark {
+		width: 32px;
+	}
+	.form .form-checkmark {
+		margin-left: 5px;
+		width: 32px;
+	}
+	.task-checkmark {
+		margin-left: 0;
+		min-width: 36px;
+	}
+	.form-checkmark i,
+	.task-checkmark i {
+		font-size: var(--font-size-sm);
+	}
+}
+@media all and (max-width: 360px) {
+	.message .form-checkmark,
+	.form .form-checkmark {
+		width: 28px;
+	}
+	.task-checkmark {
+		min-width: 32px;
+	}
+	.form-checkmark i,
+	.task-checkmark i {
+		font-size: 13px;
+	}
+}

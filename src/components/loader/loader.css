@@ -1,0 +1,78 @@
+.loader {
+	height: 47px;
+	width: 71px;
+}
+.loader.secondary {
+	position: absolute;
+	left: 50%;
+	top: -5vh;
+	transform: translate(-50%, -50%);
+	z-index: 1;
+}
+
+.loader div {
+	background-color: var(--color-white-100);
+	border-radius: var(--border-radius-1);
+	aspect-ratio: 1;
+	height: 9px;
+	position: absolute;
+	top: calc(50% - 4.5px);
+	animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.loader.secondary div {
+	height: 7px;
+	top: calc(50% - 3.5px);
+}
+
+.loader div:nth-child(1) {
+	left: 11px;
+	animation: increase 0.6s infinite;
+}
+.loader div:nth-child(2) {
+	left: 11px;
+	animation: right-move 0.6s infinite;
+}
+.loader div:nth-child(3) {
+	left: 31px;
+	animation: right-move 0.6s infinite;
+}
+.loader div:nth-child(4) {
+	left: 51px;
+	animation: decrease 0.6s infinite;
+}
+
+@keyframes increase {
+	0% {
+		transform: scale(0);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+@keyframes decrease {
+	0% {
+		transform: scale(1);
+	}
+	100% {
+		transform: scale(0);
+	}
+}
+@keyframes right-move {
+	0% {
+		transform: translate(0, 0);
+	}
+	100% {
+		transform: translate(20px, 0);
+	}
+}
+
+@media all and (max-width: 500px) {
+	.loader.secondary {
+		top: -28vh;
+	}
+}
+@media all and (max-width: 360px) {
+	.loader.secondary {
+		top: -25vh;
+	}
+}

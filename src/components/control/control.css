@@ -1,0 +1,94 @@
+.control {
+	width: 100%;
+	display: flex;
+	align-items: flex-end;
+	flex-wrap: nowrap;
+}
+
+.btn-dot {
+	background-color: var(--color-white-100);
+	border: none;
+	border-radius: var(--border-radius-1);
+	cursor: pointer;
+	opacity: 0.75;
+	margin-right: 10px;
+	padding: 0;
+	aspect-ratio: 1;
+	height: 8px;
+	position: relative;
+	transition: all 0.3s;
+}
+.btn-dot:last-child {
+	margin-right: 0;
+}
+.btn-dot::before {
+	content: '';
+	border-radius: var(--border-radius-1);
+	padding: 50%;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+.btn-dot:hover {
+	opacity: 1;
+}
+.btn-dot-active {
+	box-shadow: var(--box-shadow-white-sm);
+	opacity: 1;
+}
+
+.btn-expand {
+	background-color: transparent;
+	border: 1px solid var(--color-white-100);
+	border-radius: var(--border-radius-3);
+	color: var(--color-white-100);
+	cursor: pointer;
+	font-family: var(--font-family);
+	font-size: var(--font-size-sm);
+	font-weight: var(--font-weight-regular);
+	margin-left: auto;
+	height: 35px;
+	width: 85px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.btn-expand span {
+	width: 36px;
+}
+.btn-expand i {
+	background-color: var(--color-black-100-op);
+	border-radius: var(--border-radius-1);
+	color: var(--color-white-100);
+	font-size: 9.5px;
+	margin-left: 10px;
+	padding: 6px;
+}
+
+@media all and (max-width: 660px) {
+	.btn-expand {
+		font-size: 14px;
+		width: 80px;
+	}
+	.btn-expand i {
+		font-size: 9px;
+		margin-left: 5px;
+	}
+}
+@media all and (max-width: 360px) {
+	.btn-expand {
+		font-size: 13px;
+		height: 32px;
+		width: 75px;
+	}
+	.btn-expand span {
+		width: 30px;
+	}
+	.btn-expand i {
+		font-size: 8.5px;
+		padding: 5px;
+	}
+}

@@ -1,0 +1,59 @@
+.background {
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 100vw;
+	position: fixed;
+	left: 0;
+	top: 0;
+	transition: background-position 0.4s linear;
+	overflow: hidden;
+	z-index: -2;
+}
+.background.collapsed {
+	height: var(--height-collapsed);
+}
+.background.expanded {
+	height: var(--height-expanded);
+}
+
+.background img {
+	color: var(--color-gray-400);
+	font-family: var(--font-family);
+	font-size: var(--font-size-sm);
+	font-weight: var(--font-weight-light);
+	object-fit: cover;
+	height: 100%;
+	width: 100%;
+	transition: object-position 0.4s linear;
+	animation: blur 0.4s linear;
+}
+
+@keyframes blur {
+	0%,
+	70% {
+		filter: blur(3px);
+		-webkit-filter: blur(3px);
+		opacity: 0;
+	}
+	100% {
+		filter: blur(0);
+		-webkit-filter: blur(0);
+		opacity: 1;
+	}
+}
+
+@media all and (max-width: 960px) {
+	.background img {
+		font-size: 12px;
+	}
+}
+@media all and (max-width: 640px) {
+	.background img {
+		font-size: 10px;
+	}
+}
+@media all and (max-width: 360px) {
+	.background img {
+		font-size: 8px;
+	}
+}

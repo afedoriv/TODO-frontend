@@ -1,0 +1,66 @@
+.footer {
+	text-align: center;
+	width: 100%;
+}
+.attribution,
+.paragraph {
+	color: var(--color-gray-300);
+	font-family: var(--font-family);
+	font-size: var(--font-size-xs);
+	white-space: nowrap;
+}
+.attribution {
+	font-weight: var(--font-weight-light);
+	line-height: calc(var(--height-container-item) / 2);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.paragraph {
+	font-weight: var(--font-weight-regular);
+}
+.open-weather-logo {
+	display: inline;
+}
+.attribution a,
+.open-weather-logo a {
+	color: var(--color-gray-300);
+	cursor: pointer;
+	text-decoration: none;
+	margin-left: 3px;
+}
+.attribution a:hover {
+	text-decoration: underline;
+}
+.open-weather-logo img {
+	font-size: 8px;
+	height: 20px;
+}
+
+@media all and (max-width: 980px) {
+	.footer {
+		margin-bottom: 40px;
+		order: 4;
+	}
+}
+@media all and (max-width: 660px) {
+	.footer {
+		margin-bottom: 25px;
+	}
+	.attribution,
+	.paragraph {
+		font-size: 10px;
+	}
+}
+@media all and (max-width: 375px) {
+	.attribution,
+	.paragraph {
+		font-size: 9px;
+	}
+}
+@media all and (max-width: 360px) {
+	.attribution,
+	.paragraph {
+		font-size: 8px;
+	}
+}
