@@ -5,7 +5,7 @@ import './greetings.css';
 
 function Greetings() {
 	return (
-		<Box className='greetings'>
+		<Box className='greetings fade-in'>
 			<Heading />
 			<WeatherIcon />
 		</Box>

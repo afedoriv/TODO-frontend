@@ -14,12 +14,12 @@ function Message({ type }) {
 			<p className='row first-row'>
 				Click on the
 				<CheckMark />
-				above to change task category.
+				above to change the task category.
 			</p>
 			<p className='row'>
 				Add, edit, delete and mark tasks as completed.
 			</p>
-			<p className='row'>Drag and drop to reorder your tasks</p>
+			<p className='row'>Drag and drop to reorder your tasks.</p>
 			<p className='row'>Filter by category.</p>
 		</div>
 	);

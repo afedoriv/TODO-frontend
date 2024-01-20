@@ -5,7 +5,7 @@ import './position.css';
 
 function Position() {
 	return (
-		<Box className='position'>
+		<Box className='position fade-in'>
 			<Location />
 			<Temperature />
 		</Box>

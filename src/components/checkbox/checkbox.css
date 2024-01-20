@@ -1,7 +1,7 @@
 .form input[type='checkbox'],
 .task input[type='checkbox'] {
-	appearance: none;
 	-webkit-appearance: none;
+	appearance: none;
 }
 .form-checkmark,
 .task-checkmark {
@@ -27,22 +27,23 @@
 .task-checkmark i {
 	font-size: var(--font-size-md);
 	padding: 5%;
+	clip-path: inset(5%);
 }
 .form-checkmark.unchecked i,
 .task-checkmark i {
 	background: var(--gradient-blue-1);
-	background-clip: text;
 	-webkit-background-clip: text;
-	color: transparent;
+	background-clip: text;
 	-webkit-text-fill-color: transparent;
+	color: transparent;
 }
 .form-checkmark.checked i,
 .task label:hover .task-checkmark i {
 	background: var(--gradient-blue-2);
-	background-clip: text;
 	-webkit-background-clip: text;
-	color: transparent;
+	background-clip: text;
 	-webkit-text-fill-color: transparent;
+	color: transparent;
 }
 .task label:active .task-checkmark i {
 	opacity: 0.8;
@@ -50,24 +51,24 @@
 }
 .form .form-checkmark:hover i {
 	background: var(--gradient-orange-1);
-	background-clip: text;
 	-webkit-background-clip: text;
-	color: transparent;
+	background-clip: text;
 	-webkit-text-fill-color: transparent;
+	color: transparent;
 }
 .form-checkmark.checked:active i {
 	background: var(--gradient-blue-1);
-	background-clip: text;
 	-webkit-background-clip: text;
-	color: transparent;
+	background-clip: text;
 	-webkit-text-fill-color: transparent;
+	color: transparent;
 }
 .form .form-checkmark.unchecked:active i {
 	background: var(--gradient-blue-2);
-	background-clip: text;
 	-webkit-background-clip: text;
-	color: transparent;
+	background-clip: text;
 	-webkit-text-fill-color: transparent;
+	color: transparent;
 }
 
 @media all and (max-width: 660px) {
@@ -90,7 +91,7 @@
 @media all and (max-width: 360px) {
 	.message .form-checkmark,
 	.form .form-checkmark {
-		width: 28px;
+		width: 26px;
 	}
 	.task-checkmark {
 		min-width: 32px;

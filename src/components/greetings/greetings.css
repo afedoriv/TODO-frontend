@@ -2,8 +2,9 @@
 	width: fit-content;
 	position: absolute;
 	left: 50%;
-	top: 10vh;
-	transform: translate(-50%, 0%);
+	top: 13.3vh;
+	transform: translate(-50%, -50%);
+	opacity: 1;
 }
 
 .heading {
@@ -29,12 +30,12 @@
 
 @media all and (max-width: 980px) {
 	.greetings {
-		top: 15vh;
+		top: 17.9vh;
 	}
 }
 @media all and (max-width: 660px) {
 	.greetings {
-		top: 14vh;
+		top: 17.1vh;
 	}
 	.heading {
 		font-size: 36px;
@@ -49,13 +50,16 @@
 	}
 }
 @media all and (max-width: 390px) {
+	.greetings {
+		top: 16.5vh;
+	}
 	.heading {
 		font-size: 32.5px;
 	}
 }
 @media all and (max-width: 360px) {
 	.greetings {
-		top: 13.5vh;
+		top: 16.2vh;
 	}
 	.heading {
 		font-size: 29px;

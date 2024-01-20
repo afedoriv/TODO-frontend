@@ -8,19 +8,19 @@ import TasksSection from './components/tasksSection/TasksSection';
 
 function App() {
 	return (
-		<>
+		<PositionProvider>
 			<BackgroundProvider>
+				<Background />
+
 				<DateProvider>
-					<PositionProvider>
-						<Background />
-						<InfoDisplay />
-					</PositionProvider>
+					<InfoDisplay />
 				</DateProvider>
 			</BackgroundProvider>
+
 			<TasksProvider>
 				<TasksSection />
 			</TasksProvider>
-		</>
+		</PositionProvider>
 	);
 }
 

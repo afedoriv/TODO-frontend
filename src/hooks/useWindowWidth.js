@@ -15,7 +15,7 @@ export const useWindowWidth = (breakPoint) => {
 		return () => {
 			window.removeEventListener('resize', handleWindowResize);
 		};
-	}, []);
+	}, [breakPoint]);
 
 	return [windowWidth];
 };

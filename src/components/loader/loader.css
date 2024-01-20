@@ -1,11 +1,9 @@
 .loader {
 	height: 47px;
 	width: 71px;
-}
-.loader.secondary {
 	position: absolute;
 	left: 50%;
-	top: -5vh;
+	top: 19.7vh;
 	transform: translate(-50%, -50%);
 	z-index: 1;
 }
@@ -18,10 +16,6 @@
 	position: absolute;
 	top: calc(50% - 4.5px);
 	animation-timing-function: cubic-bezier(0, 1, 1, 0);
-}
-.loader.secondary div {
-	height: 7px;
-	top: calc(50% - 3.5px);
 }
 
 .loader div:nth-child(1) {
@@ -66,13 +60,24 @@
 	}
 }
 
-@media all and (max-width: 500px) {
-	.loader.secondary {
-		top: -28vh;
+@media all and (max-width: 980px) {
+	.loader {
+		top: 8vh;
 	}
 }
-@media all and (max-width: 360px) {
-	.loader.secondary {
-		top: -25vh;
+@media all and (max-width: 660px) {
+	.loader {
+		top: 5vh;
+	}
+}
+@media all and (max-width: 470px) {
+	.loader {
+		top: 9vh;
+	}
+}
+@media all and (max-width: 400px) {
+	.loader div {
+		height: 7px;
+		top: calc(50% - 3.5px);
 	}
 }

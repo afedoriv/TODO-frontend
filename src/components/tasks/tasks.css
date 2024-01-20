@@ -34,6 +34,7 @@
 	font-size: var(--font-size-md);
 	font-weight: var(--font-weight-regular);
 	text-overflow: ellipsis;
+	word-break: break-all;
 	line-height: calc(var(--height-container-item) / 2);
 	display: -webkit-box;
 	-webkit-line-clamp: 2;
@@ -75,6 +76,9 @@
 	cursor: pointer;
 	height: 100%;
 	width: 37px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 .btn-delete {
 	margin-right: 7px;
@@ -82,20 +86,21 @@
 .btn-delete i,
 .btn-edit i {
 	background: var(--gradient-blue-1);
-	background-clip: text;
 	-webkit-background-clip: text;
-	color: transparent;
+	background-clip: text;
 	-webkit-text-fill-color: transparent;
-	font-size: 15px;
+	color: transparent;
 	padding: 5%;
+	clip-path: inset(5%);
+	font-size: 15px;
 }
 .btn-delete:hover i,
 .btn-edit:hover i {
 	background: var(--gradient-blue-2);
-	background-clip: text;
 	-webkit-background-clip: text;
-	color: transparent;
+	background-clip: text;
 	-webkit-text-fill-color: transparent;
+	color: transparent;
 }
 .btn-delete:active i,
 .btn-edit:active i {

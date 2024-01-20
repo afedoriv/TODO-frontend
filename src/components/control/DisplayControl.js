@@ -18,7 +18,7 @@ function DisplayControl() {
 					}
 					onClick={() => handleShowImage(img.id)}
 					key={img.id}
-				></Button>
+				/>
 			))}
 		</>
 	);

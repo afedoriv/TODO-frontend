@@ -22,7 +22,7 @@
 	font-family: var(--font-family);
 	font-size: var(--font-size-md);
 	font-weight: var(--font-weight-regular);
-	height: 80%;
+	height: 100%;
 	flex: 1;
 }
 .form-input:focus {
@@ -30,10 +30,13 @@
 }
 .form-input::placeholder {
 	background: var(--gradient-green-2);
-	background-clip: text;
+	background-position: center;
 	-webkit-background-clip: text;
-	color: transparent;
+	background-clip: text;
 	-webkit-text-fill-color: transparent;
+	color: transparent;
+	padding: 1% 1px 1% 1px;
+	clip-path: inset(1% 1px 1% 1px);
 	font-family: var(--font-family);
 	font-size: var(--font-size-md);
 	font-weight: var(--font-weight-bold);
@@ -49,16 +52,20 @@
 	margin: 0 8px;
 	aspect-ratio: 1;
 	width: 35px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	transition: all 0.3s;
 }
 .btn-submit i {
 	background: var(--gradient-blue-1);
-	background-clip: text;
 	-webkit-background-clip: text;
-	color: transparent;
+	background-clip: text;
 	-webkit-text-fill-color: transparent;
+	color: transparent;
+	padding: 3%;
+	clip-path: inset(3%);
 	font-size: 13.5px;
-	padding: 5% 5% 0%;
 }
 .btn-submit:hover {
 	background: var(--gradient-white-1) padding-box,
@@ -66,20 +73,20 @@
 }
 .btn-submit:hover i {
 	background: var(--gradient-blue-2);
-	background-clip: text;
 	-webkit-background-clip: text;
-	color: transparent;
+	background-clip: text;
 	-webkit-text-fill-color: transparent;
+	color: transparent;
 }
 .btn-submit:active {
 	box-shadow: var(--box-shadow-blue-md);
 }
 .btn-submit:active i {
 	background: var(--gradient-blue-1);
-	background-clip: text;
 	-webkit-background-clip: text;
-	color: transparent;
+	background-clip: text;
 	-webkit-text-fill-color: transparent;
+	color: transparent;
 }
 
 @media all and (max-width: 980px) {

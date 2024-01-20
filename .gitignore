@@ -1,0 +1,4 @@
+/node_modules
+/build
+public/netlify.toml
+.DS_Store

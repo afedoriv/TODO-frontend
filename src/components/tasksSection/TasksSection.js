@@ -1,4 +1,5 @@
-import { useContext, useEffect } from 'react';
+import { useContext } from 'react';
+import { PositionContext } from '../../contexts/PositionContext';
 import { TasksContext } from '../../contexts/TasksContext';
 import Box from '../../ui/Box';
 import FilterPanel from '../filterPanel/FilterPanel';
@@ -7,26 +8,22 @@ import Form from '../form/Form';
 import Loader from '../loader/Loader';
 import Tasks from '../tasks/Tasks';
 import Toast from '../toast/Toast';
-import { ALERT_DURATION } from '../../config/Config';
 import '../../assets/styles/index.css';
 
 function TasksSection() {
-	const { tasksAreLoading, tasksError, handleTimer } =
+	const { positionIsLoading } = useContext(PositionContext);
+	const { tasksAreLoading, tasksError, handleError } =
 		useContext(TasksContext);
 
-	useEffect(() => {
-		const timer = setTimeout(() => {
-			handleTimer();
-		}, ALERT_DURATION);
-
-		return () => clearTimeout(timer);
-	}, [tasksError]);
+	const showLoader = tasksAreLoading || positionIsLoading;
 
 	return (
 		<Box tag='section' className='main-content'>
-			{tasksError && <Toast message={tasksError} />}
+			{tasksError && (
+				<Toast message={tasksError} onComplete={handleError} />
+			)}
 
-			{tasksAreLoading && <Loader type='secondary' />}
+			{showLoader && <Loader />}
 
 			<Form />
 			<Tasks />

@@ -155,7 +155,7 @@ function TasksProvider({ children }) {
 		if (dragItemRef.current !== dragOverItemRef.current)
 			swapTasks(dragItemRef.current, dragOverItemRef.current, dispatch);
 	}
-	function handleTimer() {
+	function handleError() {
 		dispatch({ type: 'error/set' });
 		focus();
 	}
@@ -206,7 +206,7 @@ function TasksProvider({ children }) {
 				handleDragLeave,
 				handleDragEnd,
 				handleDragDrop,
-				handleTimer,
+				handleError,
 				filterTasksByCategory,
 			}}
 		>
