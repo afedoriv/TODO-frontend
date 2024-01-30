@@ -55,6 +55,8 @@ function InfoDisplay() {
 			(!positionIsLoading && !location && greetings)
 		)
 			setLayout('secondary');
+
+		return () => setLayout('');
 	}, [positionIsLoading, location, mobileWidth, greetings]);
 
 	return (
