@@ -1,26 +1,18 @@
-import { BackgroundProvider } from './contexts/BackgroundContext';
-import { DateProvider } from './contexts/DateContext';
-import { PositionProvider } from './contexts/PositionContext';
-import { TasksProvider } from './contexts/TasksContext';
-import Background from './components/background/Background';
-import InfoDisplay from './components/infoDisplay/InfoDisplay';
-import TasksSection from './components/tasksSection/TasksSection';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import AppLayout from './layouts/AppLayout';
+import TasksSectionLayout from './layouts/TasksSectionLayout';
+import WelcomeSectionLayout from './layouts/WelcomeSectionLayout';
 
 function App() {
 	return (
-		<PositionProvider>
-			<BackgroundProvider>
-				<Background />
-
-				<DateProvider>
-					<InfoDisplay />
-				</DateProvider>
-			</BackgroundProvider>
-
-			<TasksProvider>
-				<TasksSection />
-			</TasksProvider>
-		</PositionProvider>
+		<BrowserRouter>
+			<Routes>
+				<Route element={<AppLayout />}>
+					<Route path='/' element={<WelcomeSectionLayout />} />
+					<Route path='/tasks' element={<TasksSectionLayout />} />
+				</Route>
+			</Routes>
+		</BrowserRouter>
 	);
 }
 

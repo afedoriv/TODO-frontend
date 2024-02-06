@@ -9,7 +9,7 @@ function Button({
 		<button
 			className={className}
 			type={type}
-			onClick={onClick}
+			onClick={(e) => onClick?.(e)}
 			disabled={disabled}
 		>
 			{children}

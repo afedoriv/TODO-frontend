@@ -1,5 +1,6 @@
 :root {
 	--color-black-100-op: #00000073;
+	--color-black-200-op: #00000080;
 	--color-blue-100: #7b9ff8;
 	--color-blue-200: #1858fa;
 	--color-blue-200-op: #1858fa9a;
@@ -140,8 +141,16 @@ code {
 		monospace;
 }
 
+.app-layout {
+	min-height: 100vh;
+	width: 100vw;
+	display: grid;
+	grid-template-rows: 1fr;
+}
+
 .main-content {
 	width: 45vw;
+	min-height: 75vh;
 	display: flex;
 	flex-direction: column;
 	position: absolute;
@@ -175,16 +184,6 @@ code {
 	left: 0;
 }
 
-@media all and (max-width: 1350px) {
-	.main-content {
-		width: 50vw;
-	}
-}
-@media all and (max-width: 1250px) {
-	.main-content {
-		width: 55vw;
-	}
-}
 @media all and (max-width: 1150px) {
 	.main-content {
 		width: 60vw;
@@ -197,7 +196,9 @@ code {
 }
 @media all and (max-width: 980px) {
 	.main-content {
+		min-height: 66vh;
 		width: 70vw;
+
 		top: 34vh;
 	}
 	.container {

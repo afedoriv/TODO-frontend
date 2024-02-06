@@ -3,11 +3,16 @@ import { BackgroundContext } from '../../contexts/BackgroundContext';
 import './background.css';
 
 function Background() {
-	const { image, isExpanded, mobileWidth } = useContext(BackgroundContext);
 	const [imageIsLoading, setImageIsLoading] = useState(true);
 
+	const { image, bgIsExpanded, mobileWidth, welcomePage } =
+		useContext(BackgroundContext);
+
 	const imageUrl = mobileWidth ? image.mobileSrc : image.src;
-	const backgroundClass = isExpanded
+
+	const backgroundClass = welcomePage
+		? 'background expanded'
+		: bgIsExpanded
 		? 'background expanded'
 		: 'background collapsed';
 
@@ -20,7 +25,7 @@ function Background() {
 		bgImage.onload = () => {
 			setImageIsLoading(false);
 		};
-	}, [image]);
+	}, [image, imageUrl]);
 
 	return (
 		<figure

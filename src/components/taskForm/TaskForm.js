@@ -5,7 +5,7 @@ import Checkbox from '../checkbox/Checkbox';
 import Input from './Input';
 import './form.css';
 
-function Form() {
+function TasksForm() {
 	const {
 		input,
 		isEditing,
@@ -18,7 +18,7 @@ function Form() {
 	const submitIconClass = isEditing
 		? 'fa-solid fa-check'
 		: 'fa-solid fa-plus';
-	const checked = currentTask.category === 'personal' ? false : true;
+	const checked = currentTask.category !== 'personal';
 
 	function handleSubmitForm(e) {
 		e.preventDefault();
@@ -37,16 +37,12 @@ function Form() {
 				onChange={handleChangeCategoryInput}
 			/>
 			<Input />
-			<Button
-				className='btn-submit'
-				type='submit'
-				onClick={handleSubmitForm}
-				disabled={!input}
-			>
+
+			<Button className='btn-submit' type='submit' disabled={!input}>
 				<i className={submitIconClass}></i>
 			</Button>
 		</form>
 	);
 }
 
-export default Form;
+export default TasksForm;

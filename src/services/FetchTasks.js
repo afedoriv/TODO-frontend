@@ -1,17 +1,15 @@
 import axios from 'axios';
-import { BASE_URL } from '../../config/Config';
-
-const URL = `${BASE_URL}/api/v1/tasks`;
+import { BASE_URL } from '../config/Config';
 
 async function createTask(task, dispatch, focus) {
 	dispatch({ type: 'loading' });
 
 	try {
 		const { description, category } = task;
-		const { data } = await axios.post(URL, {
+
+		const { data } = await axios.post(`${BASE_URL}/api/v1/tasks`, {
 			description,
 			category,
-			completed: false,
 		});
 
 		if (data.status === 'success') getAllTasks(dispatch, focus);
@@ -25,7 +23,7 @@ async function editTask(task, dispatch, focus) {
 
 	try {
 		const { id, description, category } = task;
-		const { data } = await axios.patch(`${URL}/${id}`, {
+		const { data } = await axios.patch(`${BASE_URL}/api/v1/tasks/${id}`, {
 			description,
 			category,
 		});
@@ -41,7 +39,9 @@ async function updateTask(task, dispatch) {
 
 	try {
 		const { id, completed } = task;
-		const { data } = await axios.patch(`${URL}/${id}`, { completed });
+		const { data } = await axios.patch(`${BASE_URL}/api/v1/tasks/${id}`, {
+			completed,
+		});
 
 		if (data.status === 'success') getAllTasks(dispatch);
 	} catch (err) {
@@ -53,7 +53,7 @@ async function deleteTask(id, dispatch) {
 	dispatch({ type: 'loading' });
 
 	try {
-		const response = await axios.delete(`${URL}/${id}`);
+		const response = await axios.delete(`${BASE_URL}/api/v1/tasks/${id}`);
 
 		if (response.status === 204) getAllTasks(dispatch);
 	} catch (err) {
@@ -63,7 +63,7 @@ async function deleteTask(id, dispatch) {
 
 async function getAllTasks(dispatch, focus) {
 	try {
-		const { data } = await axios.get(URL);
+		const { data } = await axios.get(`${BASE_URL}/api/v1/tasks`);
 
 		if (data.status === 'success')
 			dispatch({ type: 'tasks/loaded', payload: data.data.tasks });
@@ -77,7 +77,7 @@ async function deleteAllTasks(dispatch, focus) {
 	dispatch({ type: 'loading' });
 
 	try {
-		const { data } = await axios.delete(URL);
+		const { data } = await axios.delete(`${BASE_URL}/api/v1/tasks`);
 
 		if (data.status === 'success') {
 			dispatch({ type: 'tasks/deleted' });
@@ -92,7 +92,9 @@ async function deleteCompletedTasks(dispatch) {
 	dispatch({ type: 'loading' });
 
 	try {
-		const { data } = await axios.delete(`${URL}?completed=true`);
+		const { data } = await axios.delete(
+			`${BASE_URL}/api/v1/tasks?completed=true`
+		);
 
 		if (data.status === 'success') getAllTasks(dispatch);
 	} catch (err) {
@@ -104,7 +106,9 @@ async function swapTasks(id1, id2, dispatch) {
 	dispatch({ type: 'loading' });
 
 	try {
-		const { data } = await axios.put(`${URL}/${id1}&${id2}`);
+		const { data } = await axios.put(
+			`${BASE_URL}/api/v1/tasks/${id1}&${id2}`
+		);
 
 		if (data.status === 'success') getAllTasks(dispatch);
 	} catch (err) {

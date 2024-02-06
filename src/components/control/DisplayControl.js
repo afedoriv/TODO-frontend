@@ -5,10 +5,13 @@ import { images } from '../../data/images';
 import './control.css';
 
 function DisplayControl() {
-	const { image, handleShowImage } = useContext(BackgroundContext);
+	const { image, controlPanelIsExpanded, handleShowImage } =
+		useContext(BackgroundContext);
+
+	if (!controlPanelIsExpanded) return null;
 
 	return (
-		<>
+		<div className='control-image fade-in-step-three'>
 			{images.map((img) => (
 				<Button
 					className={
@@ -20,7 +23,7 @@ function DisplayControl() {
 					key={img.id}
 				/>
 			))}
-		</>
+		</div>
 	);
 }
 

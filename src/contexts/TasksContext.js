@@ -9,7 +9,7 @@ import {
 	deleteAllTasks,
 	deleteCompletedTasks,
 	swapTasks,
-} from '../components/tasks/FetchTasks';
+} from '../services/FetchTasks';
 
 const initialTaskState = {
 	id: '',

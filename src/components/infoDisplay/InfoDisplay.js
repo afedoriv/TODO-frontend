@@ -18,11 +18,11 @@ function InfoDisplay() {
 	const fadeInAnimationRef = useRef(null);
 	const fadeInContainerRef = useRef(null);
 
-	const { isExpanded, mobileWidth } = useContext(BackgroundContext);
+	const { bgIsExpanded, mobileWidth } = useContext(BackgroundContext);
 	const { greetings } = useContext(DateContext);
 	const { location, positionIsLoading } = useContext(PositionContext);
 
-	const headerClass = isExpanded ? 'header expanded' : 'header collapsed';
+	const headerClass = bgIsExpanded ? 'header expanded' : 'header collapsed';
 
 	useGSAP(
 		() => {
