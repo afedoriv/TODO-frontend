@@ -15,12 +15,11 @@ function Background() {
 		setImageIsLoading(true);
 
 		const bgImage = new Image();
-		bgImage.src = imageUrl;
-
 		bgImage.onload = () => {
 			setImageIsLoading(false);
 		};
-	}, [image]);
+		bgImage.src = imageUrl;
+	}, [imageUrl]);
 
 	return (
 		<figure
@@ -37,7 +36,6 @@ function Background() {
 					style={{
 						objectPosition: image.position,
 					}}
-					onLoad={() => setImageIsLoading(false)}
 				/>
 			)}
 		</figure>

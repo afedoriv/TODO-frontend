@@ -1,4 +1,9 @@
+# dependencies
 /node_modules
+
+# production
 /build
 public/netlify.toml
+
+# macOS specific files
 .DS_Store
